@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { TableBody } from "./TableBody";
-import { TableHeader } from "./TableHeader";
+import TableBody from "./TableBody";
+import TableHeader from "./TableHeader";
 
 export type TableConfigItem = {
   column: string,
@@ -14,7 +14,7 @@ export type TableProps = {
   onRowClick?: (row: any) => void,
 };
 
-export const Table: FC<TableProps> = ({ config, ...rest }) => {
+const Table: FC<TableProps> = ({ config, ...rest }) => {
   return (
     <table className="table table-bordered table-hover">
       <TableHeader columns={config} />
@@ -22,3 +22,5 @@ export const Table: FC<TableProps> = ({ config, ...rest }) => {
     </table>
   )
 }
+
+export default Table;

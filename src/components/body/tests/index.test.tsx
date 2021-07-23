@@ -1,5 +1,5 @@
-import { cleanup, render, screen } from '@testing-library/react'
-import { Body } from '../'
+import { cleanup, render, screen } from '../../../test-utils';
+import Body from '../'
 
 describe('When using Body component', () => {
 

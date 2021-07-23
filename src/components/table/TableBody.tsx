@@ -1,8 +1,7 @@
 import { FC } from "react";
 import { TableProps } from "./Table";
 
-export const TableBody: FC<TableProps> = ({ data, config, onRowClick = () => { } }) => {
-
+const TableBody: FC<TableProps> = ({ data, config, onRowClick = () => { } }) => {
   return (
     <tbody>
       {data.map((row, rowIndex) => (
@@ -15,3 +14,6 @@ export const TableBody: FC<TableProps> = ({ data, config, onRowClick = () => { }
     </tbody>
   )
 }
+
+export default TableBody;
+

@@ -1,7 +1,7 @@
 import { FC, useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
-import { Table, TableConfigItem } from '../../components/table/Table';
+import Table, { TableConfigItem } from '../../components/table/Table';
 import { useAppSelector } from '../../config/redux/hooks';
 import { simpleAction, thunkAsyncAction } from '../../config/redux/utils';
 import { User } from './types';

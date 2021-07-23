@@ -7,8 +7,8 @@ import { UsersPage } from './pages/users';
 import { UserPostsPage } from './pages/user-posts';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { Header } from './components/header';
-import { Body } from './components/body';
+import Header from './components/header';
+import Body from './components/body';
 
 ReactDOM.render(
   <React.StrictMode>
