@@ -6,18 +6,21 @@ import { ErrorDetails } from '../../types';
 export type UserReducer = {
   data: User[],
   loading: Boolean,
-  error?: ErrorDetails
+  error?: ErrorDetails,
+  searchTerm: string,
 }
 
 const initalState: UserReducer = {
   data: [],
   loading: false,
+  searchTerm: '',
 }
 
 export const actionTypes = {
   LOADING: 'USERS_LOADING',
   SUCCESS: 'USERS_SUCCESS',
-  FAILURE: 'USERS_FAILURE'
+  FAILURE: 'USERS_FAILURE',
+  SET_FILTER_TEXT: 'USERS_SET_FILTER_TEXT'
 }
 
 const mapUser: (user: RawUser) => User = user => ({
@@ -48,6 +51,12 @@ const UsersReducer = (state = initalState, action: PayloadAction) => {
         ...state,
         error: payload.error
       }
+    }
+    case actionTypes.SET_FILTER_TEXT: {
+      return {
+        ...state,
+        searchTerm: payload.searchTerm,
+      }  
     }
   }
   return state;

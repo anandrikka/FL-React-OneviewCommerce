@@ -6,6 +6,7 @@ import { useAppSelector } from '../../config/redux/hooks';
 import { simpleAction, thunkAsyncAction } from '../../config/redux/utils';
 import { User } from './types';
 import { actionTypes as userPostsActionTypes } from '../user-posts/reducer';
+import { Search } from './Search';
 
 const config: TableConfigItem[] = [
   { column: 'name', header: 'Name' },
@@ -18,7 +19,7 @@ type UsersPageProps = {} & RouteComponentProps;
 
 export const UsersPage: FC<UsersPageProps> = ({ history }) => {
   const dispatch = useDispatch();
-  const { loading, data } = useAppSelector(state => state.users)
+  const { loading, data, searchTerm } = useAppSelector(state => state.users)
 
   useEffect(() => {
     dispatch(thunkAsyncAction({ url: '/users', method: 'GET', type: 'USERS' }));
@@ -32,16 +33,24 @@ export const UsersPage: FC<UsersPageProps> = ({ history }) => {
     history.push(`/user/${row.id}/posts`);
   }, [history, dispatch]);
 
-
   if (loading) {
     return (
       <div>Loading...</div>
     )
   }
 
+  const filteredData = data.filter((user: User) => user.name.toLowerCase().includes(searchTerm.toLowerCase()));
+
   return (
-    <div className="users-container">
-      <Table config={config} data={data} pk="id" onRowClick={onRowClick} />
-    </div>
+    <>
+      <div className="row">
+        <div className="col-12">
+          <Search dispatch={dispatch} searchTerm={searchTerm} />
+        </div>
+        <div className="col-12">
+          <Table config={config} data={filteredData} pk="id" onRowClick={onRowClick} />
+        </div>
+      </div>
+    </>
   )
 }
