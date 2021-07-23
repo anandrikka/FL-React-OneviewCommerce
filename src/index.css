@@ -1,13 +1,31 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+  --bs-font-sans-serif: "Open Sans" "Segoe UI",Roboto,"Helvetica Neue";
+}
+/* @import '~/node_modules/normalize.css/normalize.css'; */
+
+header {
+  position: fixed;
+  height: 50px;
+  background-color: #f0f0f0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 16px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.body-container {
+  margin-top: 50px;
+  padding-top: 16px;
+}
+
+.table-hover {
+  cursor: pointer;
 }
