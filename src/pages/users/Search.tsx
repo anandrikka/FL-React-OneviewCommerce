@@ -20,7 +20,7 @@ export const Search: FC<SearchProps> = ({ dispatch, searchTerm }) => {
 
   return (
     <div className="input-group mb-3">
-      <input type="text" className="form-control" value={searchTerm} onChange={onChangeCb} />
+      <input type="text" className="form-control" value={searchTerm} onChange={onChangeCb} data-testid="name-search" />
       <div className="input-group-append">
         <span className="input-group-text">Search</span>
       </div>

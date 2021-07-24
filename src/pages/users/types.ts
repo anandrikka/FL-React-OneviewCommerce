@@ -13,7 +13,7 @@ export interface Address {
 
 export interface Company {
   name: string,
-  catchPharse: string,
+  catchPhrase: string,
   bs: string
 }
 
@@ -24,7 +24,8 @@ export interface RawUser {
   phone: string,
   website: string,
   address: Address,
-  company: Company
+  company: Company,
+  username: string,
 }
 
 export interface User {

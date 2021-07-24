@@ -4,7 +4,7 @@ import UserPostsReducer from "../../pages/user-posts/reducer";
 
 import UsersReducer from "../../pages/users/reducer";
 
-const apiUrl: string = 'https://jsonplaceholder.typicode.com';
+export const apiUrl: string = 'https://jsonplaceholder.typicode.com';
 
 const preloadedState: any = undefined;
 

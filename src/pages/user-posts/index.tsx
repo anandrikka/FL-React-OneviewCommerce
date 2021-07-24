@@ -13,7 +13,7 @@ const config: TableConfigItem[] = [
 
 type UserPostsPageProps = { } & RouteComponentProps;
 
-export const UserPostsPage: FC<UserPostsPageProps> = ({ history, match }) => {
+const UserPostsPage: FC<UserPostsPageProps> = ({ history, match }) => {
   const dispatch = useDispatch();
   const { loading, data, selectedUser } = useAppSelector(state => state.posts);
   useEffect(() => {
@@ -40,3 +40,5 @@ export const UserPostsPage: FC<UserPostsPageProps> = ({ history, match }) => {
     </div>
   )
 }
+
+export default UserPostsPage;
